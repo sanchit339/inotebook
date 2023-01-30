@@ -1,0 +1,61 @@
+// redux(js lib) : -  management of the state all over the application 
+// if the ui is not nice then ask someone to design the ui
+
+// frequent login required just to login in one time { cant get whats the issue }
+
+hookes and contexts to be done 
+
+nodeman 
+authentication 
+bcrypt.js library for passwords
+
+tokens are given for every login 
+ex : - session token json web token 
+
+jwd authentication its a json web token (secure communication  between client and server)
+
+not every time the user will provide the user id and password he will provide the token to store
+
+we use express to get the route done example (get ... post ... all that stuff)
+
+mongoose is used to create the create schema 
+
+
+the note section of backend contains CRUD operations
+
+
+concurrently (use multiple interfaces (client and server))
+
+hosting the both end point on the different servers (frontend and backend)
+now change the global package.json scripts file {local host are different 3000 / 4000}
+
+createing the context api for saving the state and the context
+
+
+use of location hook for highliting the currnt page(NavBar) 
+
+adding the icons through the fontawsome and using the " i " in the index.css
+
+install the corse for requisting the api from direct through the browser at the backend
+
+added the modal function from the bootstrap which gives the popup screen (and opend it through the js given in the document)
+
+***** ------- ***** extras
+{/* <BrowserRouter>
+<NavBar/>
+  <Switch>
+  <Route exact path="/">
+    <Home />
+    </Route>
+  <Route exact path="/about">
+      <About />
+    </Route>
+  </Switch>
+</BrowserRouter> */}
+
+
+known login 
+{
+  "email" : "sbi@pccoer.com",
+  "password" : "pass@123"
+}
