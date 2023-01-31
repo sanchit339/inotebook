@@ -1,7 +1,10 @@
+import Register from "./components/Register";
+import "./style.scss"
 function App() {
   return (
     <div>
-      Hello world!
+      hello sanchit
+      <Register/>
     </div>
   );
 }
