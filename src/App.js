@@ -3,7 +3,6 @@ import "./style.scss"
 function App() {
   return (
     <div>
-      hello sanchit
       <Register/>
     </div>
   );
