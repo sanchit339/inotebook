@@ -9,7 +9,7 @@ const Login = (props) => {
 
     const handleSubmit = async (eve)=>{
         eve.preventDefault();
-        const response = await fetch(`http://localhost:4000/api/auth/login`, {
+        const response = await fetch(`http://localhost:4001/api/auth/login`, {
             method: 'POST', // *GET, POST, PUT, DELETE, etc.
             headers: {
               'Content-Type': 'application/json',
@@ -17,7 +17,7 @@ const Login = (props) => {
             body: JSON.stringify({email: credentail.email , password: credentail.password}) 
           });
           const json = await response.json();
-          console.log(json);
+        //   console.log(json);
             // save the auth token and redirect (if success) 
         if(json.success){
             localStorage.setItem('token' , json.authtoken);  // here we are saving the token in DB

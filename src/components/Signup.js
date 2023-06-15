@@ -8,28 +8,28 @@ const Signup = (props) => {
     let history = useNavigate();
     
     const handleSubmit = async (eve)=>{
-        eve.preventDefault();
-        // destructuring (remove it form the credential)
-        const {name , email , password } = credentail;
-        const response = await fetch(`http://localhost:4000/api/auth/createUser`, {
-            method: 'POST', // *GET, POST, PUT, DELETE, etc.
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({name , email , password}) 
-          });
-          const json = await response.json();
-          console.log(json);
-          if(json.success){
-            // save the auth token and redirect (if success) 
-            localStorage.setItem('token' , json.authtoken);
+      eve.preventDefault();
+      // destructuring (remove it form the credential)
+      const {name , email , password } = credentail;
+      const response = await fetch(`http://localhost:4001/api/auth/createUser`, {
+          method: 'POST', // *GET, POST, PUT, DELETE, etc.
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({name:credentail.name ,email: credentail.email , password: credentail.password}) 
+        });
+        const json = await response.json();
+        console.log(json);
+          // save the auth token and redirect (if success) 
+        if(json.success){
+            localStorage.setItem('token' , json.authtoken);  // here we are saving the token in DB
+            props.showAlert("Account Created SuccessFully" , "success")
             // to redirect we use use history hook
             history("/");
-            props.showAlert("Account Created SuccessFully" , "success")
-          } else{
-            props.showAlert("Invalid Credential" , "danger") // has mesg and type
-          }
-    }
+        } else{  
+            props.showAlert("Invalid Credential" , "danger")
+        }
+    } 
 
     const onChange = (eve)=>{ //event 
         setCredentail({...credentail , [eve.target.name]: eve.target.value})  // change the note of the name -- value of the note 

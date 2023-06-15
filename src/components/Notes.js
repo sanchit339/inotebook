@@ -28,7 +28,7 @@ const Notes = (props) => {
   }
 
   const handleClick = (eve)=>{
-    console.log("updating the note ... " , note);
+    // console.log("updating the note ... " , note);
     editNote(note.id , note.etitle , note.edescription , note.etag);
     refClose.current.click();
     props.showAlert("Updated Successfully" , "success");

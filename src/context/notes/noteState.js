@@ -2,7 +2,7 @@ import { useState } from "react";
 import NoteContext from "./noteContext";
 
 const NoteState = (props) =>{
-    const host = "http://localhost:4000"
+    const host = "http://localhost:4001"
     // updating the note initial with the fetch api
     const notesInitial = []
     const[notes , setNotes ] = useState(notesInitial); 
@@ -19,7 +19,7 @@ const NoteState = (props) =>{
             },
           });
           const json = await response.json()
-          console.log(json)
+          // console.log(json)
           setNotes(json)
     }
 
@@ -52,7 +52,7 @@ const NoteState = (props) =>{
               }
             });
             const json =  response.json(); // parses JSON response into native JavaScript objects
-            console.log(json);
+            // console.log(json);
             const newNote = notes.filter((note)=>{return note._id !== id});
             setNotes(newNote)
         } 
@@ -69,7 +69,7 @@ const NoteState = (props) =>{
                 body: JSON.stringify({title,description,tag}) // body data type must match "Content-Type" header
               });
               const json = await response.json(); // parses JSON response into native JavaScript objects
-              console.log(json);
+              // console.log(json);
               let newNotes = JSON.parse(JSON.stringify(notes)); 
             // logic 
             for (let index = 0; index < notes.length; index++) {
